@@ -1,8 +1,7 @@
 VBA-Challenge
 
 Sub StockData()
-    ' LOOP THROUGH ALL SHEETS
-    ' ------------------------
+
 Dim WS As Worksheet
     For Each WS In ActiveWorkbook.Worksheets
     WS.Activate
@@ -33,7 +32,7 @@ Dim WS As Worksheet
          ' Loop through all ticker symbol
         
         For i = 2 To LastRow
-         ' Check if we are still within the same ticker symbol, if it is not...
+         ' Check if we are still within the same ticker symbol, if not
             If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
                 ' Set Ticker name
                 Ticker_Name = Cells(i, Column).Value
@@ -60,7 +59,7 @@ Dim WS As Worksheet
                 Row = Row + 1
                 ' reset the Open Price
                 Open_Price = Cells(i + 1, Column + 2)
-                ' reset the Volumn Total
+                ' reset the Volume Total
                 Volume = 0
             'if cells are the same ticker
             Else
